@@ -2,11 +2,11 @@
   "name": "cv-ghawaby",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "start": "ng serve --open",
-    "build": "npx ng build",
-    "lint": "ng lint"
-  },
+"scripts": {
+  "start": "ng serve --open",
+  "build": "chmod +x ./node_modules/.bin/ng && ng build",
+  "lint": "ng lint"
+},
   "dependencies": {
     "@angular/animations": "^17.3.0",
     "@angular/common": "^17.3.0",
