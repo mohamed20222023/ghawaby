@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahmed El-Ghwaby · Senior Accountant</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #050b16;
+        --card: #0f1828;
+        --muted: #8ca2c0;
+        --accent: #4fd1c5;
+        --accent-strong: #30b0ae;
+        --text: #f5f7fb;
+        --border: rgba(255, 255, 255, 0.08);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Space Grotesk", sans-serif;
+        background: radial-gradient(circle at top, #0f243d, var(--bg));
+        color: var(--text);
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .container {
+        width: min(1100px, 90vw);
+        margin: 0 auto;
+        padding: 60px 0 120px;
+      }
+      header {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        background: linear-gradient(135deg, rgba(79, 209, 197, 0.25), rgba(50, 70, 120, 0.25));
+        border: 1px solid var(--border);
+        border-radius: 32px;
+        padding: 48px;
+        backdrop-filter: blur(25px);
+      }
+      .hero-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .hero-title {
+        text-transform: uppercase;
+        letter-spacing: 0.35em;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+      h1 {
+        margin: 8px 0 0;
+        font-size: clamp(2.4rem, 5vw, 3.5rem);
+      }
+      h1 span {
+        color: var(--accent);
+      }
+      .role-chip {
+        border: 1px solid var(--border);
+        padding: 8px 18px;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+      }
+      .contact-card {
+        background: rgba(5, 11, 22, 0.6);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 16px 20px;
+      }
+      .contact-label {
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      section {
+        margin-top: 50px;
+      }
+      .section-heading {
+        text-transform: uppercase;
+        letter-spacing: 0.4em;
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-bottom: 12px;
+      }
+      .section-title {
+        font-size: clamp(1.5rem, 4vw, 2.4rem);
+        margin: 0 0 24px;
+      }
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 22px;
+      }
+      .card {
+        background: var(--card);
+        border-radius: 28px;
+        padding: 26px;
+        border: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+      }
+      .card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        border: 1px solid transparent;
+        background: linear-gradient(135deg, rgba(79, 209, 197, 0.2), transparent);
+        mix-blend-mode: screen;
+        pointer-events: none;
+      }
+      .card h3 {
+        margin: 0 0 12px;
+        font-size: 1.2rem;
+      }
+      .card ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+      .profile-copy {
+        font-size: 1rem;
+        color: #dce5f7;
+      }
+      .pill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .pill {
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .timeline {
+        display: grid;
+        gap: 20px;
+      }
+      .timeline-card {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 30px;
+        align-items: start;
+        padding: 26px;
+        border-radius: 28px;
+        border: 1px solid var(--border);
+        background: var(--card);
+      }
+      .timeline-card small {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--muted);
+        margin-bottom: 5px;
+      }
+      .timeline-card h4 {
+        margin: 0 0 6px;
+      }
+      .timeline-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+      .timeline-card ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+        color: #dce5f7;
+      }
+      .split {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+      }
+      footer {
+        margin-top: 80px;
+        padding: 20px 0 40px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+      @media (max-width: 640px) {
+        header {
+          padding: 32px;
+        }
+        .timeline-card {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="hero-top">
+          <div>
+            <div class="hero-title">Resume</div>
+            <h1><span>Ahmed</span> El-Ghwaby</h1>
+            <p class="role-chip">Senior Accountant · Supply Chain Specialist</p>
+          </div>
+          <div class="pill-list">
+            <span class="pill">Saudi Arabia · Riyadh</span>
+            <span class="pill">9+ years experience</span>
+          </div>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-label">Email</div>
+            <a href="mailto:ah.elghwaby@gmail.com">ah.elghwaby@gmail.com</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Phone</div>
+            <a href="tel:+966568493195">+966 568 493 195</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-label">Location</div>
+            <span>Riyadh, Saudi Arabia</span>
+          </div>
+        </div>
+      </header>
+
+      <section id="profile">
+        <div class="section-heading">Profile Summary</div>
+        <h2 class="section-title">Detail-oriented leader in finance & supply chain</h2>
+        <div class="card">
+          <p class="profile-copy">
+            Detail-oriented and results-driven Senior Accountant with extensive experience across financial reporting,
+            reconciliations, cost analysis, and internal controls. Proven ability to improve financial accuracy,
+            strengthen accounting processes, and support strategic decision-making. Skilled in managing month-end and
+            year-end closing while delivering sharp analytical insight for stakeholders.
+          </p>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="section-heading">Core Skill Set</div>
+        <h2 class="section-title">Finance, analytics & leadership toolkit</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Professional Skills</h3>
+            <ul>
+              <li>Financial reporting & dashboarding (Power BI, Excel)</li>
+              <li>ERP systems (Odoo) & automation</li>
+              <li>Month-end & year-end closing</li>
+              <li>Expense tracking, AP/AR management</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Relevant Strengths</h3>
+            <ul>
+              <li>Supervising & team leadership</li>
+              <li>Analytical thinking & accuracy</li>
+              <li>Commitment & eagerness to learn</li>
+              <li>Cross-functional collaboration</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Tools & Platforms</h3>
+            <ul>
+              <li>Advanced Microsoft Excel</li>
+              <li>Power BI dashboards</li>
+              <li>ERP · Odoo</li>
+              <li>ICDL certified</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="education">
+        <div class="section-heading">Education</div>
+        <div class="timeline">
+          <div class="timeline-card">
+            <div>
+              <small>2012 – 2016</small>
+              <strong>Mansoura University</strong>
+            </div>
+            <div>
+              <h4>Bachelor of Commerce</h4>
+              <p>English section · Accounting department</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="section-heading">Work Experience</div>
+        <h2 class="section-title">Progressive responsibilities across KSA & Egypt</h2>
+        <div class="timeline">
+          <div class="timeline-card">
+            <div>
+              <small>2023 – Present · KSA</small>
+              <strong>Verzasca Co.</strong>
+            </div>
+            <div>
+              <h4>Supply Chain Specialist</h4>
+              <ul>
+                <li>Own end-to-end supply chain operations: procurement, logistics, warehousing, and distribution.</li>
+                <li>Analyze demand patterns and align accurate demand & supply plans.</li>
+                <li>Monitor inventory levels to prevent shortages and overstock while tracking KPIs (accuracy, fulfillment, lead time).</li>
+                <li>Deliver weekly and monthly reports that drive strategic decision-making.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-card">
+            <div>
+              <small>2021 – 2023 · KSA</small>
+              <strong>Rahet Al-omr Co.</strong>
+            </div>
+            <div>
+              <h4>Senior Accountant</h4>
+              <ul>
+                <li>Prepared and analyzed monthly, quarterly, and annual financial statements.</li>
+                <li>Led the full month-end/year-end cycle including journals, accruals, and adjustments.</li>
+                <li>Managed AP/AR transactions, collections, and ensured on-time payments.</li>
+                <li>Drove internal control enhancements aligned to policy and audit requirements.</li>
+                <li>Built financial reports/dashboards and mentored junior accountants.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-card">
+            <div>
+              <small>2019 – 2021 · KSA</small>
+              <strong>Amal Al-Modn Co.</strong>
+            </div>
+            <div>
+              <h4>Accountant</h4>
+              <ul>
+                <li>Recorded daily journal entries with precision and timeliness.</li>
+                <li>Supported financial statements and monthly closing reports.</li>
+                <li>Reconciled bank statements and validated supporting documentation.</li>
+                <li>Reviewed invoices, receipts, and purchase orders before posting.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-card">
+            <div>
+              <small>2018 – 2019 · Egypt</small>
+              <strong>Matarya Liver Hospital</strong>
+            </div>
+            <div>
+              <h4>Accountant · Part Time</h4>
+              <ul>
+                <li>Reviewed receipts and purchase invoices with full documentation control.</li>
+                <li>Recorded daily journal entries and organized accounting files.</li>
+                <li>Participated in inventory checks and audit preparation.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-card">
+            <div>
+              <small>2017 – 2019 · Egypt</small>
+              <strong>OPPO</strong>
+            </div>
+            <div>
+              <h4>Sales Supervisor</h4>
+              <ul>
+                <li>Led sales teams to achieve monthly and quarterly targets with strong coaching.</li>
+                <li>Monitored daily performance, merchandising, and in-store promotions.</li>
+                <li>Coordinated with distributors/retailers for stock coverage and replenishment.</li>
+                <li>Executed market visits, ensured brand compliance, and supported product launches.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="training">
+        <div class="section-heading">Training & Certifications</div>
+        <div class="split">
+          <div class="card">
+            <h3>Finance & Analytics</h3>
+            <ul>
+              <li>Supply Chain Management</li>
+              <li>Managing Financial Performance Effectively</li>
+              <li>Power BI Dashboards</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Professional Development</h3>
+            <ul>
+              <li>Training Program for Professional Accountant</li>
+              <li>Principle of Banking Certificate</li>
+              <li>ICDL</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        © 2025 Ahmed El-Ghwaby · Crafted with a modern single-page resume concept inspired by PixiansStudio UI.
+      </footer>
+    </div>
+  </body>
+</html>
+
